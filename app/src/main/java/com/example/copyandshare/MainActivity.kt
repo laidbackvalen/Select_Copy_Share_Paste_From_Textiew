@@ -30,11 +30,10 @@ class MainActivity : AppCompatActivity() {
             val clipBoardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             val clip = ClipData.newPlainText("label", textview.text)
             clipBoardManager.setPrimaryClip(clip)
-
+            //ClipData.newPlainText is used to create a new clip with a label and the text from the TextView.
+            //ClipboardManager.setPrimaryClip is used to set this clip to the clipboard.
             Toast.makeText(this, "Text Copied To Your ClipBoard!", Toast.LENGTH_SHORT).show()
         }
-        //ClipData.newPlainText is used to create a new clip with a label and the text from the TextView.
-        //ClipboardManager.setPrimaryClip is used to set this clip to the clipboard.
 
         val share = findViewById<TextView>(R.id.shareDiscription)
         share.setOnClickListener {
@@ -43,6 +42,12 @@ class MainActivity : AppCompatActivity() {
             shareIntent.type = "text/plain"
             shareIntent.putExtra(Intent.EXTRA_TEXT, textview.text.toString())
             startActivity(shareIntent)
+        }
+
+        val edittext = findViewById<TextView>(R.id.editText)
+        val delete = findViewById<TextView>(R.id.delete)
+        delete.setOnClickListener {
+            edittext.text = ""
         }
     }
 }

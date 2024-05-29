@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/disc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/inter_medium"
+        android:text="DISCRIPTION"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="#919394"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewDiscription"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/white"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/disc"
+        app:layout_constraintTop_toBottomOf="@+id/disc">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/viewDiscTop"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/viewDiscBottom"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_weight="0.6" />
+
+            <TextView
+                android:id="@+id/discriptionText"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center|start"
+                android:maxWidth="350dp"
+                android:textIsSelectable="true"
+                android:paddingStart="20dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="15dp"
+                android:text="@string/discr"
+                android:textColor="#707070"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintBottom_toBottomOf="@+id/viewDiscTop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/viewDiscTop" />
+
+            <View
+                android:id="@+id/viewDiscBottom"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/card_score_bottom_bg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewDiscTop"
+                app:layout_constraintVertical_weight="0.15" />
+
+            <TextView
+                android:id="@+id/copyDiscription"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center"
+                android:text="Copy"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#2196F3"
+                app:layout_constraintBottom_toBottomOf="@id/viewDiscBottom"
+                app:layout_constraintEnd_toStartOf="@id/viewBetween2"
+                app:layout_constraintStart_toStartOf="@id/viewDiscBottom"
+                app:layout_constraintTop_toBottomOf="@+id/viewDiscTop" />
+
+            <View
+                android:id="@+id/viewBetween2"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="#707070"
+                app:layout_constraintBottom_toBottomOf="@+id/viewDiscBottom"
+                app:layout_constraintEnd_toStartOf="@+id/shareDiscription"
+                app:layout_constraintStart_toEndOf="@+id/copyDiscription"
+                app:layout_constraintTop_toBottomOf="@+id/viewDiscTop" />
+
+            <TextView
+                android:id="@+id/shareDiscription"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center"
+                android:text="Share"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#2196F3"
+                app:layout_constraintBottom_toBottomOf="@id/viewDiscBottom"
+                app:layout_constraintEnd_toEndOf="@+id/viewDiscBottom"
+                app:layout_constraintStart_toEndOf="@id/viewBetween2"
+                app:layout_constraintTop_toBottomOf="@+id/viewDiscTop" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/inter_medium"
+        android:text="PASTE HERE"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="#919394"
+        app:layout_constraintEnd_toEndOf="@+id/cardViewDiscription"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cardViewDiscription"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewDiscription" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="15dp"
+        android:minHeight="100dp"
+        android:textColor="#707070"
+        android:gravity="center|start"
+        android:hint="PASTE HERE.."
+        android:textColorHint="#707070"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginTop="12dp"
+        android:elevation="3dp"
+        android:background="@drawable/card_score_bottom_bg"
+        app:layout_constraintEnd_toEndOf="@+id/cardViewDiscription"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cardViewDiscription"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
